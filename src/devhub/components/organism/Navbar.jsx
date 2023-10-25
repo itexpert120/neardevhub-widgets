@@ -202,7 +202,7 @@ const MobileLink = styled.a`
 return (
   <Navbar className="position-relative">
     <Logo />
-    <div className="d-flex gap-3">
+    <div className="d-flex align-items-center" style={{ gap: 24 }}>
       <LinksContainer>
         {links.map((link) => (
           <Widget
