@@ -565,7 +565,11 @@ function Editor() {
                 parentId: postId,
                 mode: "Create",
               }}
+
+
             />
+
+            
           </>
         ) : (
           <>
@@ -586,6 +590,7 @@ function Editor() {
                 onDraftStateChange,
                 draftState:
                   draftState?.edit_post_id == postId ? draftState : undefined,
+
                 toggleEditor: toggleEditor,
               }}
             />
