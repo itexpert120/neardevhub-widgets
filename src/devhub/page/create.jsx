@@ -286,18 +286,17 @@ const existingLabels = existingLabelStrings
   });
 
 const labelEditor = (
-  <div className="col-lg-12 mb-2">
-    <p className="fs-6 fw-bold mb-1">Labels</p>
-    <Typeahead
-      multiple
-      labelKey="name"
-      onInputChange={checkLabel}
-      onChange={setLabels}
-      options={existingLabels}
-      placeholder="near.social, widget, NEP, standard, protocol, tool"
-      selected={state.labels}
-      positionFixed
-      allowNew={(results, props) => {
+  <Widget
+    src="devhub.near/widget/devhub.components.molecule.MultiselectInput"
+    props={{
+      label: "Labels",
+      labelKey: "name",
+      onInputChange: checkLabel,
+      onChange: setLabels,
+      options: existingLabels,
+      placeholder: "near.social, widget, NEP, standard, protocol, tool",
+      selected: state.labels,
+      allowNew: (_, props) => {
         return (
           !existingLabelSet.has(props.text) &&
           props.text.toLowerCase() !== "blog" && // dont allow adding "Blog"
@@ -308,9 +307,9 @@ const labelEditor = (
             labels: [props.text],
           })
         );
-      }}
-    />
-  </div>
+      },
+    }}
+  />
 );
 
 const nameDiv = (
