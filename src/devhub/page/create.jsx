@@ -296,6 +296,7 @@ const labelEditor = (
       options: existingLabels,
       placeholder: "near.social, widget, NEP, standard, protocol, tool",
       selected: state.labels,
+      value: props.labels.split(","),
       allowNew: (_, props) => {
         return (
           !existingLabelSet.has(props.text) &&
